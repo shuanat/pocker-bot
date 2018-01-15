@@ -1,0 +1,13 @@
+*.gz
+*.record
+
+images
+annotations
+data
+train
+eval
+exported_graphs
+faster_rcnn_resnet101_coco_11_06_2017
+
+.ipynb_checkpoints
+
