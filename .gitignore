@@ -95,3 +95,12 @@ ENV/
 # Rope project settings
 .ropeproject
 
+*.gz
+*.pbtxt
+*.index
+*.meta
+*.ckpt*
+*tfevents*
+checkpoint
+
+.idea/*
