@@ -15,6 +15,8 @@ def maybe_download():
     return train_path, test_path
 
 def load_data(y_name='Species'):
+    print("LOADING DATA")
+    
     """Returns the iris dataset as (train_x, train_y), (test_x, test_y)."""
     train_path, test_path = maybe_download()
 
@@ -28,18 +30,22 @@ def load_data(y_name='Species'):
 
 
 def train_input_fn(features, labels, batch_size):
+    print("CREATING TRAIN ITERATOR")
+    
     """An input function for training"""
     # Convert the inputs to a Dataset.
     dataset = tf.data.Dataset.from_tensor_slices((dict(features), labels))
 
     # Shuffle, repeat, and batch the examples.
-    dataset = dataset.shuffle(1000).repeat().batch(batch_size)
+    dataset = dataset.shuffle(1000).repeat(1).batch(batch_size)
 
     # Return the read end of the pipeline.
     return dataset.make_one_shot_iterator().get_next()
 
 
 def eval_input_fn(features, labels, batch_size):
+    print("CREATING EVAL ITERATOR")
+    
     """An input function for evaluation or prediction"""
     features=dict(features)
     if labels is None:
