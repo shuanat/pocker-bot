@@ -1,0 +1,21 @@
+*.gz
+*.record
+
+images
+data
+datasets
+.ipynb_checkpoints
+annotations
+exported_graphs
+
+88K	./deployment
+796K	./nets
+4.2M	./slim
+1.5M	./test_images
+8.4M	./object_detection
+1.4M	./datasets
+8.6M	./.ipynb_checkpoints
+
+
+.ipynb_checkpoints
+
