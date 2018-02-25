@@ -6,8 +6,7 @@ def stack_images(images, labels=None, num_cols=None, num_rows=None, cmap='gray')
         num_cols = len(images)
     if num_rows is None:
         num_rows = len(images) / num_cols
-    width, height = 2 * num_cols, 3 * num_rows
-    fig = plt.figure(figsize=(width, height))
+    fig = plt.figure()
     
     items = list(enumerate(images))
     items = items[:int(num_rows*num_cols)]
@@ -26,3 +25,5 @@ def stack_images(images, labels=None, num_cols=None, num_rows=None, cmap='gray')
             else:
                 label = labels
             ax.text(0, 0, label, bbox={'facecolor':'white', 'pad':5}, fontdict={'size':14, 'weight':'bold'})
+    
+    plt.tight_layout()
